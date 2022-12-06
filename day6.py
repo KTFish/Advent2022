@@ -10,24 +10,20 @@ def is_message(letters):
 
 # PART 1
 with open('data/input6.txt') as f:
-    signal = f.readline().strip()
-    while signal:
-        l, r = 0, 4
-        probe = signal[l:r]
-        while not is_marker(probe):
-            l, r = l + 1, r + 1
-            probe = signal[l:r]
-        signal = f.readline().strip()
+    signal = f.readline()
+
+
+l, r = 0, 4
+probe = signal[l:r]
+while not is_marker(probe):
+    l, r = l + 1, r + 1
+    probe = signal[l:r]
 print(f'Answer 1: {r}')
 
 # PART 2
-with open('data/input6.txt') as f:
-    signal = f.readline().strip()
-    while signal:
-        l, r = 0, 14
-        probe = signal[l:r]
-        while not is_message(probe):
-            l, r = l + 1, r + 1
-            probe = signal[l:r]
-        signal = f.readline().strip()
+l, r = 0, 14
+probe = signal[l:r]
+while not is_message(probe):
+    l, r = l + 1, r + 1
+    probe = signal[l:r]
 print(f'Answer 2: {r}')
